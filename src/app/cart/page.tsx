@@ -1,4 +1,5 @@
 import React from 'react'
+import Image from 'next/image' 
 
 const BlushCart = () => {
 
@@ -22,7 +23,13 @@ const BlushCart = () => {
       <div className='beauties'>
         {BlushCartdata.map((BlushCart) => (
           <div key={BlushCart.id} className='BlushCart'>
-            <img src={BlushCart.image} alt={BlushCart.name} />
+            {/* Image component use kiya */}
+            <Image 
+              src={BlushCart.image} 
+              alt={BlushCart.name} 
+              width={300}  // You can adjust the width and height as per your layout
+              height={300} // You can adjust the width and height as per your layout
+            />
             <h3>{BlushCart.name}</h3>
             <p>{BlushCart.description}</p>
             <div>${BlushCart.price}</div>
@@ -34,5 +41,6 @@ const BlushCart = () => {
   )
 }
 
-export default BlushCart
+export default BlushCart;
+
 
