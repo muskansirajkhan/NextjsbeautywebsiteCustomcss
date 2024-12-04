@@ -19,21 +19,26 @@ const BlushCart = () => {
     ]
 
   return (
-    <div>
-      <div className='beauties'>
+    <div className="p-6 bg-gray-100 min-h-screen">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
         {BlushCartdata.map((BlushCart) => (
-          <div key={BlushCart.id} className='BlushCart'>
+          <div key={BlushCart.id} className="bg-white p-4 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
             {/* Image component use kiya */}
-            <Image 
-              src={BlushCart.image} 
-              alt={BlushCart.name} 
-              width={300}  // You can adjust the width and height as per your layout
-              height={300} // You can adjust the width and height as per your layout
-            />
-            <h3>{BlushCart.name}</h3>
-            <p>{BlushCart.description}</p>
-            <div>${BlushCart.price}</div>
-            <button>Add to Cart</button>
+            <div className="w-full h-64 relative mb-4">
+              <Image 
+                src={BlushCart.image} 
+                alt={BlushCart.name} 
+                layout="fill" 
+                objectFit="cover" 
+                className="rounded-t-lg"
+              />
+            </div>
+            <h3 className="text-lg font-semibold mb-2">{BlushCart.name}</h3>
+            <p className="text-sm text-gray-600 mb-2">{BlushCart.description}</p>
+            <div className="text-lg font-bold text-gray-800 mb-4">${BlushCart.price}</div>
+            <button className="w-full py-2 bg-custom-bg text-white font-semibold rounded-lg hover:bg-pink-600 transition-colors duration-200">
+              Add to Cart
+            </button>
           </div>
         ))}
       </div>
@@ -42,5 +47,6 @@ const BlushCart = () => {
 }
 
 export default BlushCart;
+
 
 
